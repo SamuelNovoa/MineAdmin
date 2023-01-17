@@ -25,13 +25,14 @@ SECRET_KEY = 'django-insecure-pyig^(xcf$r-n94hg%@33udm96qm#6^izhi(owdol()#=sxwgb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'mineserv.ddns.net'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

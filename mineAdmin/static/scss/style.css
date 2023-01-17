@@ -1,45 +1,84 @@
-.jumb-banner {
-  background-image: url("/static/img/marino.jpg");
-  background-repeate: no-repeate;
-  background-size: 100%;
-  background-position: center;
-  box-shadow: 0 1em 2em -1em black; }
-  .jumb-banner .mask {
-    background-color: rgba(0, 0, 0, 0.6);
-    width: 62%;
-    margin: 30px auto;
-    padding: 30px;
-    border-radius: 25px;
-    backdrop-filter: blur(2px); }
-    .jumb-banner .mask h1 {
-      color: #E9DFC7;
-      margin-bottom: 3rem !important; }
-    .jumb-banner .mask p {
-      color: #ECE6D6; }
-
-.feature-item .mask {
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 50%;
-  margin: 30px auto;
-  padding: 30px;
-  border-radius: 25px; }
-  .feature-item .mask h1 {
-    color: #E9DFC7;
-    margin-bottom: 3rem !important; }
-  .feature-item .mask p {
-    color: #ECE6D6; }
-
-.feature-item #feature-play {
-  background-image: url("/static/img/"); }
-
-.view-body {
-  background-image: url("/static/img/minecart.jpg");
-  background-repeate: no-repeate;
-  background-size: 100%; }
-
 .navbar {
   padding: 15px 125px;
   --bs-bg-opacity: 0.85;
-  backdrop-filter: blur(6px); }
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1em 3em -1em black;
+  -moz-box-shadow: 0 1em 3em -1em black;
+  -webkit-box-shadow: 0 1em 3em -1em black;
+  z-index: 40; }
+  .navbar .nav-item:not(:last-child) {
+    margin-right: 25px; }
+
+.jumbotron {
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center; }
+  .jumbotron .mask {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(2px); }
+    .jumbotron .mask h1 {
+      color: #E9DFC7;
+      margin-bottom: 3rem !important; }
+    .jumbotron .mask p {
+      color: #ECE6D6; }
+  .jumbotron.banner {
+    position: relative;
+    box-shadow: 0 1em 3em -1em black;
+    -moz-box-shadow: 0 1em 3em -1em black;
+    -webkit-box-shadow: 0 1em 3em -1em black;
+    z-index: 30; }
+    .jumbotron.banner .mask {
+      margin: 90px auto 30px auto;
+      width: 62%; }
+  .jumbotron.feature {
+    border-radius: 20px;
+    height: 350px;
+    position: relative;
+    transition: left .5s, right .5s; }
+    .jumbotron.feature:not(:last-child) {
+      margin-bottom: 30px; }
+    .jumbotron.feature .mask {
+      width: 50%; }
+    .jumbotron.feature.left {
+      right: 50px; }
+      .jumbotron.feature.left .mask {
+        margin: 20px auto 20px 50px; }
+      .jumbotron.feature.left:hover {
+        right: 100px; }
+    .jumbotron.feature.right {
+      left: 50px; }
+      .jumbotron.feature.right .mask {
+        margin: 20px 50px 20px auto; }
+      .jumbotron.feature.right:hover {
+        left: 0; }
+  .jumbotron#welcome-jumb {
+    background-image: url("/static/img/marine-L.jpg"); }
+  .jumbotron#play-jumb {
+    background-image: url("/static/img/adventure-L.jpg"); }
+  .jumbotron#stats-jumb {
+    background-image: url("/static/img/ores-L.jpg"); }
+  .jumbotron#tools-jumb {
+    background-image: url("/static/img/tools-L.jpg"); }
+
+.view-body {
+  background-image: url("/static/img/minecart.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  background-position: top;
+  padding: 50px 0;
+  position: relative;
+  box-shadow: 0 1em 3em -1em black;
+  -moz-box-shadow: 0 1em 3em -1em black;
+  -webkit-box-shadow: 0 1em 3em -1em black;
+  z-index: 20; }
+
+footer {
+  background-image: url("/static/img/footer-bg.jpg");
+  color: #ECE6D6;
+  text-align: center;
+  padding: 20px; }
 
 /*# sourceMappingURL=style.css.map */

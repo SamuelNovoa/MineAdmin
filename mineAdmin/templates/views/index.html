@@ -1,38 +1,54 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% block content %}
-<div class="p-5 text-center bg-image jumb-banner">
-  <div class="mask">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="text-white">
-        <h1 class="mb-3">Bienvenido al servidor</h1>
-        <p class="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="view-body">
-  <div class="container">
-    <div id="feature-play" class="p-5 text-center feature-item">
+  <div id="index-view">
+    <div id="welcome-jumb" class="p-5 text-center bg-image jumbotron banner">
       <div class="mask">
-        <div class="d-flex justify-content-left align-items-left h-100">
-          <div class="text-white">
-            <h1 class="mb-3">¡Juega ahora!</h1>
-            <p class="mb-3">Haz click en jugar y accede inmediatamente. Hay zombies, patatas, ¡Y ahora aún más aldeanos que esclavizar!</p>
+        <div class="d-flex justify-content-center align-items-center h-100">
+          <div>
+            <h1 class="mb-3">Bienvenido al servidor</h1>
+            <p class="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+              Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+              printer took a galley of type and scrambled it to make a type specimen book. It has survived
+              not only five centuries, but also the leap into electronic typesetting, remaining
+              essentially unchanged.</p>
           </div>
         </div>
       </div>
     </div>
-    <div id="feature-stats" class="p-5 text-center feature-item">
-      <div class="mask">
-        <div class="d-flex justify-content-left align-items-left h-100">
-          <div class="text-white">
-            <h1 class="mb-3">¡Juega ahora!</h1>
-            <p class="mb-3">Haz click en jugar y accede inmediatamente. Hay zombies, patatas, ¡Y ahora aún más aldeanos que esclavizar!</p>
+    <div class="view-body">
+      <div class="container">
+        <div id="play-jumb" class="p-5 text-center jumbotron feature left">
+          <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div>
+                <h1 class="mb-3">¡Juega ahora!</h1>
+                <p class="mb-3">Haz click en jugar y accede inmediatamente. ¡No hay tiempo que perder!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="stats-jumb" class="p-5 text-center jumbotron feature right">
+          <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div>
+                <h1 class="mb-3">Estadísticas</h1>
+                <p class="mb-3">Aquí puedes consultar las estadísticas de actividad y estabilidad del servidor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tools-jumb" class="p-5 text-center jumbotron feature left">
+          <div class="mask">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div>
+                <h1 class="mb-3">¿Tienes problemas?</h1>
+                <p class="mb-3">Puedes usar nuestrar herramientas para tratar de solucionar tu problema.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 {% endblock %}
