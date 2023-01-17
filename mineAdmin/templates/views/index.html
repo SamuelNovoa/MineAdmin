@@ -1,5 +1,38 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% block content %}
-<img src="{% static 'img/treehouse.jpg' %}" class="img-fluid" alt="Banner inicial">
+<div class="p-5 text-center bg-image jumb-banner">
+  <div class="mask">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+        <h1 class="mb-3">Bienvenido al servidor</h1>
+        <p class="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="view-body">
+  <div class="container">
+    <div id="feature-play" class="p-5 text-center feature-item">
+      <div class="mask">
+        <div class="d-flex justify-content-left align-items-left h-100">
+          <div class="text-white">
+            <h1 class="mb-3">¡Juega ahora!</h1>
+            <p class="mb-3">Haz click en jugar y accede inmediatamente. Hay zombies, patatas, ¡Y ahora aún más aldeanos que esclavizar!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="feature-stats" class="p-5 text-center feature-item">
+      <div class="mask">
+        <div class="d-flex justify-content-left align-items-left h-100">
+          <div class="text-white">
+            <h1 class="mb-3">¡Juega ahora!</h1>
+            <p class="mb-3">Haz click en jugar y accede inmediatamente. Hay zombies, patatas, ¡Y ahora aún más aldeanos que esclavizar!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

@@ -1,4 +1,45 @@
-#nav-container {
-  margin: 10px 125px; }
+.jumb-banner {
+  background-image: url("/static/img/marino.jpg");
+  background-repeate: no-repeate;
+  background-size: 100%;
+  background-position: center;
+  box-shadow: 0 1em 2em -1em black; }
+  .jumb-banner .mask {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 62%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 25px;
+    backdrop-filter: blur(2px); }
+    .jumb-banner .mask h1 {
+      color: #E9DFC7;
+      margin-bottom: 3rem !important; }
+    .jumb-banner .mask p {
+      color: #ECE6D6; }
+
+.feature-item .mask {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 50%;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 25px; }
+  .feature-item .mask h1 {
+    color: #E9DFC7;
+    margin-bottom: 3rem !important; }
+  .feature-item .mask p {
+    color: #ECE6D6; }
+
+.feature-item #feature-play {
+  background-image: url("/static/img/"); }
+
+.view-body {
+  background-image: url("/static/img/minecart.jpg");
+  background-repeate: no-repeate;
+  background-size: 100%; }
+
+.navbar {
+  padding: 15px 125px;
+  --bs-bg-opacity: 0.85;
+  backdrop-filter: blur(6px); }
 
 /*# sourceMappingURL=style.css.map */

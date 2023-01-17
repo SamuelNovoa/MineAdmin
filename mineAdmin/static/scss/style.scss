@@ -1,5 +1,12 @@
 @import 'variables';
+@import 'index.scss';
 
-#nav-container {
-  margin: 10px 125px;
+.navbar {
+    padding: 15px 125px;
+    --bs-bg-opacity: 0.85;
+    backdrop-filter: blur(6px);
 }
+
+// #nav-container {
+//   margin: 10px 125px;
+// }
