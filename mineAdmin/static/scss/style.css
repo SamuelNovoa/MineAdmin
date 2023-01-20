@@ -9,6 +9,23 @@
   .navbar .nav-item:not(:last-child) {
     margin-right: 25px; }
 
+.modal-dialog {
+  max-width: 550px; }
+  .modal-dialog .modal-header, .modal-dialog .modal-body, .modal-dialog .modal-footer {
+    padding: 25px 50px; }
+  .modal-dialog .modal-footer {
+    justify-content: center; }
+    .modal-dialog .modal-footer label {
+      margin-right: 40px; }
+
+.btn-dark {
+  transition: color .5s, background-color .5s;
+  border-radius: 10px;
+  width: 120px; }
+  .btn-dark:hover {
+    background-color: #ababab;
+    color: black; }
+
 .jumbotron {
   background-repeat: no-repeat;
   background-size: 100%;
@@ -36,13 +53,7 @@
     border-radius: 20px;
     height: 350px;
     position: relative;
-    transition: left .5s, right .5s, color .5s, background-color .5s; }
-    .jumbotron.feature .btn {
-      border-radius: 10px;
-      width: 120px; }
-      .jumbotron.feature .btn:hover {
-        background-color: #ababab;
-        color: black; }
+    transition: left .5s, right .5s; }
     .jumbotron.feature:not(:last-child) {
       margin-bottom: 30px; }
     .jumbotron.feature .mask {

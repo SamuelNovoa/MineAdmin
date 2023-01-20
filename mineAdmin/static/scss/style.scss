@@ -17,6 +17,37 @@
     }
 }
 
+.modal-dialog {
+    max-width: 550px;
+
+    .modal-header, .modal-body, .modal-footer {
+        padding: 25px 50px;
+    }
+
+    .modal-body > label {
+
+    }
+
+    .modal-footer {
+        justify-content: center;
+
+        label {
+            margin-right: 40px;
+        }
+    }
+}
+
+.btn-dark {
+    transition: color .5s, background-color .5s;
+    border-radius: 10px;
+    width: 120px;
+
+    &:hover {
+        background-color: #ababab;
+        color: black;
+    }
+}
+
 .jumbotron {
     background-repeat: no-repeat;
     background-size: 100%;
@@ -55,17 +86,7 @@
         border-radius: 20px;
         height: 350px;
         position: relative;
-        transition: left .5s, right .5s, color .5s, background-color .5s;
-
-        .btn {
-            border-radius: 10px;
-            width: 120px;
-
-            &:hover {
-                background-color: #ababab;
-                color: black;
-            }
-        }
+        transition: left .5s, right .5s;
 
         &:not(:last-child) {
             margin-bottom: 30px;

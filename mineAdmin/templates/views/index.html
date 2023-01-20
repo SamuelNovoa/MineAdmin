@@ -24,7 +24,7 @@
               <div>
                 <h1 class="mb-3">¡Juega ahora!</h1>
                 <p class="mb-3">Haz click en jugar y accede inmediatamente. ¡No hay tiempo que perder!</p>
-                <a class="btn btn-dark btn-lg" href="#" role="button">Jugar</a>
+                <a class="btn btn-dark btn-lg" href="{% url 'play' %}" role="button">Jugar</a>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
               <div>
                 <h1 class="mb-3">Estadísticas</h1>
                 <p class="mb-3">Aquí puedes consultar las estadísticas de actividad y estabilidad del servidor.</p>
-                <a class="btn btn-dark btn-lg" href="#" role="button">Ver</a>
+                <a class="btn btn-dark btn-lg" href="{% url 'stats' %}" role="button">Ver</a>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
               <div>
                 <h1 class="mb-3">¿Tienes problemas?</h1>
                 <p class="mb-3">Puedes usar nuestrar herramientas para tratar de solucionar tu problema.</p>
-                <a class="btn btn-dark btn-lg" href="#" role="button">Explorar</a>
+                <a class="btn btn-dark btn-lg" href="{% url 'tools' %}" role="button">Explorar</a>
               </div>
             </div>
           </div>
