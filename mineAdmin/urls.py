@@ -1,14 +1,15 @@
 from django.urls import path
 
-from mineAdmin import views
+from mineAdmin.controllers import *
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('play', views.play, name='play'),
-    path('stats', views.stats, name='stats'),
-    path('tools', views.tools, name='tools'),
+    path('', public_controller.index, name='index'),
+    path('<error>', public_controller.index, name='index'),
+    path('play', public_controller.play, name='play'),
+    path('stats', public_controller.stats, name='stats'),
+    path('tools', public_controller.tools, name='tools'),
 
-    path('login', views.login_user, name='login'),
-    path('register', views.register_user, name='register'),
-    path('logout', views.logout_user, name='logout')
+    path('login', login_controller.login_user, name='login'),
+    path('register', login_controller.register_user, name='register'),
+    path('logout', login_controller.logout_user, name='logout')
 ]
