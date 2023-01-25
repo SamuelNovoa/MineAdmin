@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 
-def index(request, error=True):
+def index(request, error=None):
+    print(error)
     return render(request, 'views/index.html', {'error': error})
 
 

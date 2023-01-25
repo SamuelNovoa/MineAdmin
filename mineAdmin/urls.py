@@ -1,10 +1,11 @@
-from django.urls import path
+
+from django.urls import path, re_path
 
 from mineAdmin.controllers import *
 
 urlpatterns = [
-    path('', public_controller.index, name='index'),
-    path('<error>', public_controller.index, name='index'),
+    re_path('^$', public_controller.index, name='index'),
+    path('<str:error>', public_controller.index, name='index'),
     path('play', public_controller.play, name='play'),
     path('stats', public_controller.stats, name='stats'),
     path('tools', public_controller.tools, name='tools'),

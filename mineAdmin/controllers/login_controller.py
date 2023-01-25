@@ -4,30 +4,27 @@ from django.contrib.auth import authenticate, login, logout
 
 
 def login_user(request):
-    print('...')
     try:
-        print('tie que ir')
         username = request.POST['email']
         pwd = request.POST['pwd']
 
         user = authenticate(request, username=username, password=pwd)
         if user is not None:
             login(request, user)
-            print('k')
-            return redirect('play')
+            return redirect('index')
         else:
-            print('va con error')
-            return redirect('index', error=True)
+            return redirect('index', {'error': 'loginError'}, permanent=True)
     except Exception as e:
         print(e)
-        return redirect('play')
+        return redirect('index')
 
 
 def register_user(request):
+    email = request.POST['email']
     username = request.POST['username']
     pwd = request.POST['pwd']
 
-    user = User.objects.create_user(username, 'prueba@prueba', pwd)
+    user = User.objects.create_user(username, email, pwd)
     user.save()
     return redirect('index')
 

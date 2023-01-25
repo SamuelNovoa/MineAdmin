@@ -1,3 +1,11 @@
+{% if error %}
+<script>
+  $(window).on('load', function() {
+    $(#loginModal).modal('show');
+  });
+</script>
+{% endif %}
+
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -15,7 +23,7 @@
           </div>
           <div class="mb-3">
             <label for="login_pwd" class="form-label">Contraseña</label>
-            <input type="password" class="form-control {% if error == True %} is-invalid {% endif %} " id="login_pwd" name="pwd">
+            <input type="password" class="form-control {% if error %} is-invalid {% endif %} " id="login_pwd" name="pwd">
               <div id="validationLogin" class="invalid-feedback">
                 El nombre de usuario o contraseña no son correctos.
               </div>
@@ -48,19 +56,19 @@
           {% csrf_token %}
           <div class="mb-3">
             <label for="reg_email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="reg_email" aria-describedby="x">
+            <input type="email" class="form-control" id="reg_email" name="email" aria-describedby="x">
             <div id="register-email-help" class="form-text">Nunca lo compartiremos con nadie más.</div>
           </div>
           <div class="mb-3">
             <label for="reg_name" class="form-label">Nombre de usuario</label>
-            <input type="text" class="form-control" id="reg_name" aria-describedby="nameHelp">
+            <input type="text" class="form-control" id="reg_name" name="username" aria-describedby="nameHelp">
             <div id="reg-name-help" class="form-text">Tu nombre público, y el que debes usar para
               conectarte.
             </div>
           </div>
           <div class="mb-3">
             <label for="reg_pwd" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="reg_pwd">
+            <input type="password" class="form-control" id="reg_pwd" name="pwd">
           </div>
           <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="terms-check">
