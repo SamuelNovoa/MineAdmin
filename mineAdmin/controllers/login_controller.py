@@ -13,9 +13,8 @@ def login_user(request):
             login(request, user)
             return redirect('index')
         else:
-            return redirect('index', {'error': 'loginError'}, permanent=True)
+            return redirect('login', 'loginError')
     except Exception as e:
-        print(e)
         return redirect('index')
 
 
