@@ -1,11 +1,6 @@
 from django.shortcuts import render
 
 
-def index(request, error=None):
-    print(error)
-    return render(request, 'views/index.html', {'error': error})
-
-
 def play(request):
     return render(request, 'views/play.html', {'error': False})
 

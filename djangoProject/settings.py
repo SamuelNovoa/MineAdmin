@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-pyig^(xcf$r-n94hg%@33udm96qm#6^izhi(owdol()#=sxwgb
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'mineserv.ddns.net'
 ]
 
 

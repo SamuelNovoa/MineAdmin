@@ -1,2 +1,2 @@
-from . import login_controller
-from . import public_controller
+from . import login_controllers
+from . import static_controllers
