@@ -1,10 +1,29 @@
-from django.shortcuts import redirect
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 
 
 def index(request):
+    if request.method == 'GET':
+        login_form = AuthenticationForm(None)
+        register_form = UserCreationForm(None)
+        return render(request, 'views/index.html', {'login_form': login_form, 'register_form': register_form})
 
+    elif request.method == 'POST':
+        if 'login-button' in request.POST:
+            login_form = AuthenticationForm(request.POST)
+            if not login_form.is_valid():
+                return render(request, "views/index.html",
+                              {'login_form': login_form, 'register_form': UserCreationForm(None)})
+
+
+
+        elif 'register-button' in request.POST:
+            register_form = UserCreationForm(request.POST)
+            if not register_form.is_valid():
+                return render(request, "views/index.html",
+                              {'login_form': AuthenticationForm(None), 'register_form': register_form})
 
 
 def login_user(request):

@@ -1,3 +1,4 @@
+{% load bootstrap5 %}
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -6,8 +7,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{% url 'login' %}">
+        <form method="POST" action="{% url 'index' %}">
           {% csrf_token %}
+          {% bootstrap_form login_form %}
 {#          <div class="mb-3">#}
 {#            <label for="log_email" class="form-label">Correo electrónico</label>#}
 {#            <input type="email" class="form-control" id="log_email" name="email" aria-describedby="emailHelp">#}
@@ -24,7 +26,7 @@
 {#            <input type="checkbox" class="form-check-input" id="remember-check">#}
 {#            <label class="form-check-label" for="remember-check">No cerrar la sesión.</label>#}
 {#          </div>#}
-          <button type="submit" class="btn btn-dark">Enviar</button>
+          <button type="submit" class="btn btn-dark" name="login-button">Enviar</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -44,29 +46,30 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{% url 'register' %}">
+        <form method="POST" action="{% url 'index' %}">
           {% csrf_token %}
-          <div class="mb-3">
-            <label for="reg_email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="reg_email" name="email" aria-describedby="x">
-            <div id="register-email-help" class="form-text">Nunca lo compartiremos con nadie más.</div>
-          </div>
-          <div class="mb-3">
-            <label for="reg_name" class="form-label">Nombre de usuario</label>
-            <input type="text" class="form-control" id="reg_name" name="username" aria-describedby="nameHelp">
-            <div id="reg-name-help" class="form-text">Tu nombre público, y el que debes usar para
-              conectarte.
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="reg_pwd" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="reg_pwd" name="pwd">
-          </div>
-          <div class="mb-3 form-check">
-            <input type="checkbox" class="form-check-input" id="terms-check">
-            <label class="form-check-label" for="terms-check">Acepto los <a href="#">términos y condiciones
-              de servicio.</a></label>
-          </div>
+          {% bootstrap_form register_form %}
+{#          <div class="mb-3">#}
+{#            <label for="reg_email" class="form-label">Correo electrónico</label>#}
+{#            <input type="email" class="form-control" id="reg_email" name="email" aria-describedby="x">#}
+{#            <div id="register-email-help" class="form-text">Nunca lo compartiremos con nadie más.</div>#}
+{#          </div>#}
+{#          <div class="mb-3">#}
+{#            <label for="reg_name" class="form-label">Nombre de usuario</label>#}
+{#            <input type="text" class="form-control" id="reg_name" name="username" aria-describedby="nameHelp">#}
+{#            <div id="reg-name-help" class="form-text">Tu nombre público, y el que debes usar para#}
+{#              conectarte.#}
+{#            </div>#}
+{#          </div>#}
+{#          <div class="mb-3">#}
+{#            <label for="reg_pwd" class="form-label">Contraseña</label>#}
+{#            <input type="password" class="form-control" id="reg_pwd" name="pwd">#}
+{#          </div>#}
+{#          <div class="mb-3 form-check">#}
+{#            <input type="checkbox" class="form-check-input" id="terms-check">#}
+{#            <label class="form-check-label" for="terms-check">Acepto los <a href="#">términos y condiciones#}
+{#              de servicio.</a></label>#}
+{#          </div>#}
           <button type="submit" class="btn btn-dark">Enviar</button>
         </form>
       </div>

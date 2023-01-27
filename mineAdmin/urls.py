@@ -4,13 +4,13 @@ from django.urls import path
 from mineAdmin.controllers import *
 
 urlpatterns = [
-    path('', public_controller.index, name='index'),
-    path('play', public_controller.play, name='play'),
-    path('stats', public_controller.stats, name='stats'),
-    path('tools', public_controller.tools, name='tools'),
+    path('play', static_controllers.play, name='play'),
+    path('stats', static_controllers.stats, name='stats'),
+    path('tools', static_controllers.tools, name='tools'),
 
-    path('login', login_controller.login_user, name='login'),
-    path('login/<str:error>', public_controller.index, name='login'),
-    path('register', login_controller.register_user, name='register'),
-    path('logout', login_controller.logout_user, name='logout')
+    path('', login_controllers.index, name='index'),
+    # path('login', login_controller.login_user, name='login'),
+    # path('login/<str:error>', public_controller.index, name='login'),
+    path('register', login_controllers.register_user, name='register'),
+    path('logout', login_controllers.logout_user, name='logout')
 ]
