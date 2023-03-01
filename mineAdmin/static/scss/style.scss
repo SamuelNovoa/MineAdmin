@@ -1,39 +1,111 @@
 @import 'variables';
 
-@import 'index.scss';
+@import 'login.scss';
+@import 'footer.scss';
+@import 'navbar.scss';
+@import 'admin.scss';
 
-.navbar {
-    padding: 15px 125px;
-    --bs-bg-opacity: 0.85;
-    backdrop-filter: blur(6px);
+body {
+    height: 100vh;
+}
 
-    box-shadow: 0 1em 3em -1em rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0 1em 3em -1em rgba(0, 0, 0, 1);
-    -webkit-box-shadow: 0 1em 3em -1em rgba(0, 0, 0, 1);
-    z-index: 40;
+.view {
+    min-height: 100%;
 
-    .nav-item:not(:last-child) {
-        margin-right: 25px;
+    &:has(> .admin) {
+        min-height: unset;
+        height: 100%;
     }
 }
 
-.modal-dialog {
-    max-width: 550px;
+.accordion-header {
+    margin-bottom: 0;
+}
 
-    .modal-header, .modal-body, .modal-footer {
-        padding: 25px 50px;
-    }
+.accordion {
+    margin-bottom: 2rem;
+}
 
-    .modal-body > label {
+.mod-list {
+    list-style: none;
+    a {
+        color: white;
+        text-decoration: none;
 
-    }
-
-    .modal-footer {
-        justify-content: center;
-
-        label {
-            margin-right: 40px;
+        &:hover {
+            color: #989898;
         }
+    }
+}
+
+.accordion-collapse {
+    padding: 1rem;
+}
+
+.content {
+    background-color: $content-background-color;
+    backdrop-filter: blur(2px);
+    padding: 40px 0;
+    color: white;
+    text-align: center;
+
+    .accordion-item {
+        background-color: $input-background-color;
+    }
+
+    .accordion-button {
+        background-color: $input-background-color;
+        text-align: center;
+        display: block;
+        color: white;
+        padding: 1.5rem 0;
+
+        &:after {
+            content: none;
+        }
+    }
+
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    .input-group {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+
+        button {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+            background-color: $button-background-color-transparent;
+            line-height: 2.5rem;
+            border-color: $button-border-background-color;
+        }
+
+        input {
+            text-align: center;
+            border-bottom-right-radius: 3px;
+            border-top-right-radius: 3px;
+            background-color: $input-background-color;
+            line-height: 2.5rem;
+
+            &:focus {
+                color: white;
+                border: unset;
+            }
+        }
+    }
+
+    .download {
+        background-color: $button-background-color;
+        margin-top: 1rem;
+        padding: 1rem 1.5rem;
+        color: white;
     }
 }
 
@@ -43,7 +115,7 @@
     width: 120px;
 
     &:hover {
-        background-color: #ababab;
+        background-color: #3b3b3b;
         color: black;
     }
 }
@@ -145,19 +217,14 @@
     padding: 50px 0;
 
     position: relative;
-    box-shadow: 0 1em 3em -1em rgba(0, 0, 0, 1);
-    -moz-box-shadow: 0 1em 3em -1em rgba(0, 0, 0, 1);
-    -webkit-box-shadow: 0 1em 3em -1em rgba(0, 0, 0, 1);
     z-index: 20;
 }
 
-.content {
+.btn {
+    border-radius: 0;
+    background-color: $button-background-color;
 
-}
-
-footer {
-    background-image: url('/static/img/footer-bg.jpg');
-    color: $banner-body-font-color;
-    text-align: center;
-    padding: 20px;
+    &.big {
+        width: 100%;
+    }
 }

@@ -1,0 +1,87 @@
+{% extends 'admin.html' %}
+{% load bootstrap5 %}
+{% load static %}
+{% load bootstrap_icons %}
+{% block content_admin %}
+  <div class="tab_content">
+    {% if available %}
+      <h2 class="mods_header">Superusuarios</h2>
+      <div class="mod-list">
+        {% for user in superusers %}
+          <div class="mod-item">
+            <div class="mod-info">
+              <h4>{{ user.username }}</h4>
+              <p>{{ user.email }}</p>
+            </div>
+            <div class="mod-icons">
+              <form method="POST" action="{% url 'change_superuser' %}">
+                {% csrf_token %}
+                <input type="hidden" name="user_id" value="{{ user.id }}">
+                <button type="submit" title="Degradar" class="btn btn-dark yellow">
+                  {% bs_icon 'bookmark' size='1.5rem' %}
+                </button>
+              </form>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <h2 class="mods_header">Usuarios estándar</h2>
+      <div class="mod-list">
+        {% for user in users %}
+          <div class="mod-item">
+            <div class="mod-info">
+              <h4>{{ user.username }}</h4>
+              <p>{{ user.email }}</p>
+            </div>
+            <div class="mod-icons">
+              <form method="POST" action="{% url 'change_superuser' %}">
+                {% csrf_token %}
+                <input type="hidden" name="user_id" value="{{ user.id }}">
+                <button type="submit" title="Ascender a superusuario" class="btn btn-dark yellow">
+                  {% bs_icon 'bookmark-star' size='1.5rem' %}
+                </button>
+              </form>
+              <form method="POST" action="{% url 'ban_user' %}">
+                {% csrf_token %}
+                <input type="hidden" name="user_id" value="{{ user.id }}">
+                <button type="submit" title="Bloquear usuario" class="btn btn-dark red">
+                  {% bs_icon 'x-circle' size='1.5rem' %}
+                </button>
+              </form>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <h2 class="mods_header">Usuarios bloqueados</h2>
+      <div class="mod-list">
+        {% for user in blocked %}
+          <div class="mod-item">
+            <div class="mod-info">
+              <h4>{{ user.username }}</h4>
+              <p>{{ user.email }}</p>
+            </div>
+            <div class="mod-icons">
+              <form method="POST" action="{% url 'ban_user' %}">
+                {% csrf_token %}
+                <input type="hidden" name="user_id" value="{{ user.id }}">
+                <button type="submit" title="Desbloquear usuario" class="btn btn-dark green">
+                  {% bs_icon 'check-lg' size='1.5rem' %}
+                </button>
+              </form>
+              <form method="POST" action="{% url 'delete_user' %}">
+                {% csrf_token %}
+                <input type="hidden" name="user_id" value="{{ user.id }}">
+                <button type="submit" class="btn btn-dark red">
+                  {% bs_icon 'trash' size='1.5rem' %}
+                </button>
+              </form>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <h2>No hay ningún servidor configurado.</h2>
+      <p>Por favor, establece la ruta del servidor en el archivo de configuración.</p>
+    {% endif %}
+  </div>
+{% endblock %}

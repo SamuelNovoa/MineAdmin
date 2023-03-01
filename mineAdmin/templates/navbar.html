@@ -1,4 +1,6 @@
 {% load bootstrap5 %}
+{% load login_tags %}
+
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -7,26 +9,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{% url 'index' %}">
+        <form method="POST" action="{% url 'login' %}">
           {% csrf_token %}
+          {% login_form as login_form %}
           {% bootstrap_form login_form %}
-{#          <div class="mb-3">#}
-{#            <label for="log_email" class="form-label">Correo electrónico</label>#}
-{#            <input type="email" class="form-control" id="log_email" name="email" aria-describedby="emailHelp">#}
-{#            <div id="login-email-help" class="form-text">Nunca lo compartiremos con nadie más.</div>#}
-{#          </div>#}
-{#          <div class="mb-3">#}
-{#            <label for="login_pwd" class="form-label">Contraseña</label>#}
-{#            <input type="password" class="form-control {% if error %} is-invalid {% endif %} " id="login_pwd" name="pwd">#}
-{#              <div id="validationLogin" class="invalid-feedback">#}
-{#                El nombre de usuario o contraseña no son correctos.#}
-{#              </div>#}
-{#          </div>#}
-{#          <div class="mb-3 form-check">#}
-{#            <input type="checkbox" class="form-check-input" id="remember-check">#}
-{#            <label class="form-check-label" for="remember-check">No cerrar la sesión.</label>#}
-{#          </div>#}
-          <button type="submit" class="btn btn-dark" name="login-button">Enviar</button>
+          <button type="submit" class="btn btn-dark big">Enviar</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -46,31 +33,11 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form method="POST" action="{% url 'index' %}">
+        <form method="POST" action="{% url 'register' %}">
           {% csrf_token %}
+          {% register_form as register_form %}
           {% bootstrap_form register_form %}
-{#          <div class="mb-3">#}
-{#            <label for="reg_email" class="form-label">Correo electrónico</label>#}
-{#            <input type="email" class="form-control" id="reg_email" name="email" aria-describedby="x">#}
-{#            <div id="register-email-help" class="form-text">Nunca lo compartiremos con nadie más.</div>#}
-{#          </div>#}
-{#          <div class="mb-3">#}
-{#            <label for="reg_name" class="form-label">Nombre de usuario</label>#}
-{#            <input type="text" class="form-control" id="reg_name" name="username" aria-describedby="nameHelp">#}
-{#            <div id="reg-name-help" class="form-text">Tu nombre público, y el que debes usar para#}
-{#              conectarte.#}
-{#            </div>#}
-{#          </div>#}
-{#          <div class="mb-3">#}
-{#            <label for="reg_pwd" class="form-label">Contraseña</label>#}
-{#            <input type="password" class="form-control" id="reg_pwd" name="pwd">#}
-{#          </div>#}
-{#          <div class="mb-3 form-check">#}
-{#            <input type="checkbox" class="form-check-input" id="terms-check">#}
-{#            <label class="form-check-label" for="terms-check">Acepto los <a href="#">términos y condiciones#}
-{#              de servicio.</a></label>#}
-{#          </div>#}
-          <button type="submit" class="btn btn-dark">Enviar</button>
+          <button type="submit" class="btn btn-dark big">Enviar</button>
         </form>
       </div>
       <div class="modal-footer">
@@ -86,20 +53,18 @@
   <div id="nav-container" class="container-fluid">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{% url 'index' %}">Inicio</a>
+        <li class="nav-item">
+          <a class="nav-link {% if request.path == '/' %} active {% endif %}" href="{% url 'index' %}">Inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'play' %}">Jugar</a>
+          <a class="nav-link {% if request.path == '/play' %} active {% endif %}" href="{% url 'play' %}">Jugar</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'stats' %}">Estadísticas</a>
+          <a class="nav-link {% if request.path == '/stats' %} active {% endif %}" href="{% url 'stats' %}">Estadísticas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'tools' %}">Herramientas</a>
+          <a class="nav-link {% if request.path == '/tools' %} active {% endif %}" href="{% url 'tools' %}">Herramientas</a>
         </li>
-        {% if user.is_authenticated %}
-        {% endif %}
       </ul>
     </div>
     <div class="mx-auto order-0">
@@ -111,26 +76,28 @@
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
       <ul class="navbar-nav ms-auto">
         {% if user.is_authenticated %}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-             data-bs-toggle="dropdown" aria-expanded="false">
-            {{ user.get_username }}
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Configuración</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
-          </ul>
-        </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+               data-bs-toggle="dropdown" aria-expanded="false">
+              {{ user.get_username }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% if user.is_superuser %}
+                <li><a class="dropdown-item" href="{% url 'admin' %}">Administrar sitio</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+              {% endif %}
+              <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
+            </ul>
+          </li>
         {% else %}
-        <li class="nav-item">
-          <!-- Button trigger modal -->
-          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-            Identificarse
-          </a>
-        </li>
+          <li class="nav-item">
+            <!-- Button trigger modal -->
+            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+              Identificarse
+            </a>
+          </li>
         {% endif %}
       </ul>
     </div>

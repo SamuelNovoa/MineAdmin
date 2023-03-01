@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% load bootstrap5 %}
+{% load static %}
+
+{% block content %}
+  <div class="flex-grow-1 view-body">
+    <div class="container login-form content">
+      <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        {% bootstrap_form login_form %}
+        <button type="submit" class="btn btn-dark big">Enviar</button>
+      </form>
+      <span class="login-line">¿AÚN NO TIENES CUENTA?</span>
+      <a class="btn btn-dark big" href="{% url 'register' %}">Regístrate</a>
+    </div>
+  </div>
+{% endblock %}

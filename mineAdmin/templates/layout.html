@@ -13,11 +13,13 @@
   <title>Title</title>
 </head>
 <body>
-{% include 'navbar.html' %}
+  {% include 'navbar.html' %}
 
-{% block content %}
-{% endblock content %}
+  <div class="view d-flex flex-column">
+    {% block content %}
+    {% endblock content %}
+  </div>
 
-{% include 'footer.html' %}
+  {% include 'footer.html' %}
 </body>
 </html>

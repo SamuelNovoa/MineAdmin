@@ -1,54 +1,50 @@
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from ..forms import CustomAuthenticationForm, CustomCreationForm
 from django.shortcuts import redirect, render
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-
-
-def index(request):
-    if request.method == 'GET':
-        login_form = AuthenticationForm(None)
-        register_form = UserCreationForm(None)
-        return render(request, 'views/index.html', {'login_form': login_form, 'register_form': register_form})
-
-    elif request.method == 'POST':
-        if 'login-button' in request.POST:
-            login_form = AuthenticationForm(request.POST)
-            if not login_form.is_valid():
-                return render(request, "views/index.html",
-                              {'login_form': login_form, 'register_form': UserCreationForm(None)})
-
-
-
-        elif 'register-button' in request.POST:
-            register_form = UserCreationForm(request.POST)
-            if not register_form.is_valid():
-                return render(request, "views/index.html",
-                              {'login_form': AuthenticationForm(None), 'register_form': register_form})
 
 
 def login_user(request):
     try:
-        username = request.POST['email']
-        pwd = request.POST['pwd']
+        if request.method == 'GET':
+            return render(request, 'views/login.html', {'login_form': CustomAuthenticationForm(request, None)})
 
-        user = authenticate(request, username=username, password=pwd)
-        if user is not None:
-            login(request, user)
-            return redirect('index')
-        else:
-            return redirect('login', 'loginError')
+        elif request.method == 'POST':
+            login_form = CustomAuthenticationForm(request, request.POST)
+            if not login_form.is_valid():
+                return render(request, 'views/login.html', {'login_form': login_form})
+
+            email = login_form.cleaned_data['username']
+            password = login_form.cleaned_data['password']
+            user = authenticate(request, username=email, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('index')
+            else:
+                return render(request, 'views/login.html', {'login_form': login_form})
+
     except Exception as e:
-        return redirect('index')
+        print(e)
+        return render(request, 'views/login.html', {'login_form': CustomAuthenticationForm(None)})
 
 
 def register_user(request):
-    email = request.POST['email']
-    username = request.POST['username']
-    pwd = request.POST['pwd']
+    try:
+        if request.method == 'GET':
+            return render(request, 'views/register.html', {'register_form': CustomCreationForm(None)})
 
-    user = User.objects.create_user(username, email, pwd)
-    user.save()
-    return redirect('index')
+        elif request.method == 'POST':
+            register_form = CustomCreationForm(request.POST)
+            if not register_form.is_valid():
+                return render(request, "views/register.html", {'register_form': register_form})
+
+            user = register_form.save()
+            user.save()
+            login(request, user)
+            return redirect('index')
+
+    except Exception as e:
+        print(e)
+        return render(request, 'views/register.html', {'register_form': CustomCreationForm(None)})
 
 
 def logout_user(request):

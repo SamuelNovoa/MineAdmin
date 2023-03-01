@@ -1,0 +1,19 @@
+.modal-content {
+  background-color: $content-background-color;
+  backdrop-filter: blur(2px);
+  border-radius: 0;
+  color: white;
+}
+
+.modal-footer {
+  justify-content: space-around;
+}
+
+nav {
+  padding: 1rem 3rem !important;
+
+  li {
+    margin-left: .3rem;
+    margin-right: .3rem;
+  }
+}

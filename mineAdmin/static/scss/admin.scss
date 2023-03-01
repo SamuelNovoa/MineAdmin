@@ -1,0 +1,98 @@
+.nav-pills {
+  width: 200px;
+  border-right: 1px solid $separator-color;
+  padding: 20px 0;
+
+  .nav-link {
+    border-radius: 0;
+    background-color: transparent;
+    color: white;
+
+    &.active {
+      background-color: $input-background-color;
+    }
+  }
+}
+
+.admin {
+  .content {
+    height: 100%;
+    padding: 22px 0 0 0 !important;
+  }
+
+  padding-bottom: 0 !important;
+}
+
+.tab_content {
+  margin-top: 50px;
+  width: 100%;
+
+  .server-active {
+    color: green;
+  }
+
+  .server-stopped {
+    color: red;
+  }
+
+  .mods_header {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $separator-color;
+  }
+
+  .btn {
+    width: 200px
+  }
+
+  .mod-list {
+    padding: 0;
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .mod-item {
+    background-color: $content-light-color;
+    margin: 1rem;
+    display: flex;
+    text-align: left;
+    align-items: center;
+
+    .mod-info {
+      width: 100%;
+      padding: 1.5rem;
+    }
+
+    .mod-icons {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: row;
+
+      button {
+        background-color: unset;
+        border: unset;
+        padding: 0;
+        margin: 0;
+        width: auto;
+
+        &.green:hover {
+          color: green;
+        }
+
+        &.red:hover {
+          color: red
+        }
+
+        &.yellow:hover {
+          color: yellow
+        }
+      }
+
+      svg {
+        margin: 0 7px;
+      }
+    }
+  }
+}

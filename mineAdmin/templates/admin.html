@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+  <div class="flex-grow-1 view-body admin">
+    <div class="container-fluid content d-flex">
+      <div class="nav flex-column nav-pills">
+        <a class="nav-link {% if request.path == '/admin' %} active {% endif %}" href="{% url 'admin' %}">General</a>
+        <a class="nav-link {% if request.path == '/admin/users' %} active {% endif %}" href="{% url 'users' %}">Usuarios</a>
+        <a class="nav-link {% if request.path == '/admin/mods' %} active {% endif %}" href="{% url 'mods' %}">Mods</a>
+      </div>
+      {% block content_admin %}
+      {% endblock content_admin %}
+    </div>
+  </div>
+{% endblock %}
