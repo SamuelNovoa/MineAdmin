@@ -1,4 +1,5 @@
 from .base import *
 
 # SERVER_PATH = ''
-SERVER_PATH = Path('C:/Users/samue/Documents/mineserv (fabric)')
+SERVER_PATH = Path('Z:/DI/MineAdmin/server')
+LOGIN_URL = '/login'

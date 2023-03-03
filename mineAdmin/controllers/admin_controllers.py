@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import user_passes_test
 from django.shortcuts import render, redirect
 
 from mineAdmin.forms import ModForm
@@ -5,6 +6,11 @@ from mineAdmin.models import Mod, User
 from mineAdmin.services import ServerService
 
 
+def superuser_check(user):
+    return user.is_superuser
+
+
+@user_passes_test(superuser_check)
 def index(request):
     try:
         if request.method == 'GET':
@@ -19,7 +25,7 @@ def index(request):
     except Exception as e:
         print(e)
 
-
+@user_passes_test(superuser_check)
 def users(request):
     try:
         if request.method == 'GET':
@@ -35,7 +41,7 @@ def users(request):
     except Exception as e:
         print(e)
 
-
+@user_passes_test(superuser_check)
 def ban_user(request):
     try:
         if request.method != 'POST':
@@ -52,7 +58,7 @@ def ban_user(request):
     except Exception as e:
         print(e)
 
-
+@user_passes_test(superuser_check)
 def delete_user(request):
     try:
         if request.method != 'POST':
@@ -68,6 +74,7 @@ def delete_user(request):
         print(e)
 
 
+@user_passes_test(superuser_check)
 def update_user(request):
     try:
         if request.method != 'POST':
@@ -85,6 +92,7 @@ def update_user(request):
         print(e)
 
 
+@user_passes_test(superuser_check)
 def mods(request):
     try:
         if request.method == 'GET':
@@ -99,6 +107,7 @@ def mods(request):
         print(e)
 
 
+@user_passes_test(superuser_check)
 def new_mod(request):
     try:
         if request.method != 'POST':
@@ -121,6 +130,7 @@ def new_mod(request):
         print(e)
 
 
+@user_passes_test(superuser_check)
 def delete_mod(request):
     try:
         if request.method != 'POST':
@@ -136,6 +146,7 @@ def delete_mod(request):
         print(e)
 
 
+@user_passes_test(superuser_check)
 def update_mod(request):
     try:
         if request.method != 'POST':
@@ -153,9 +164,11 @@ def update_mod(request):
         print(e)
 
 
+@user_passes_test(superuser_check)
 def start_server(request):
     return redirect('admin')
 
 
+@user_passes_test(superuser_check)
 def stop_server(request):
     return redirect('admin')
