@@ -1,16 +1,14 @@
 {% extends 'layout.html' %}
 {% load static %}
+{% load i18n %}
+
 {% block content %}
   <div id="stats-jumb" class="p-5 text-center bg-image jumbotron banner">
     <div class="mask">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div>
-          <h1 class="mb-3">Bienvenido al servidor</h1>
-          <p class="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a type specimen book. It has survived
-            not only five centuries, but also the leap into electronic typesetting, remaining
-            essentially unchanged.</p>
+          <h1 class="mb-3">{% trans 'Our statistics' %}</h1>
+          <p class="mb-3">{% trans 'Get to know in depth the statistics and metrics of our Minecraft server. Discover information about player activity, resource usage and much more to improve your gaming experience. experience.' %}</p>
         </div>
       </div>
     </div>
@@ -20,37 +18,37 @@
       <canvas id="usersChart" width="800" height="400"></canvas>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script>
-        const ctx = document.getElementById('usersChart').getContext('2d');
-        const usersChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: {{ statistics.labels|safe }},
-                datasets: [
-                    {
-                        label: "Media de jugadores diarios",
-                        data: {{ statistics.players|safe }},
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    },
-                    {
-                        label: "Media de nuevos jugadores",
-                        data: {{ statistics.registers|safe }},
-                        backgroundColor: 'rgb(154,27,149)',
-                        borderColor: 'rgb(203,53,129)',
-                        borderWidth: 1
-                    }
-                ]
-            },
-            options: {
-                aspectRatio: 3,
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                    }
-                }
-            }
-        })
+          const ctx = document.getElementById('usersChart').getContext('2d');
+          const usersChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: {{ statistics.labels|safe }},
+                  datasets: [
+                      {
+                          label: "Media de jugadores diarios",
+                          data: {{ statistics.players|safe }},
+                          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                          borderColor: 'rgba(75, 192, 192, 1)',
+                          borderWidth: 1
+                      },
+                      {
+                          label: "Media de nuevos jugadores",
+                          data: {{ statistics.registers|safe }},
+                          backgroundColor: 'rgb(154,27,149)',
+                          borderColor: 'rgb(203,53,129)',
+                          borderWidth: 1
+                      }
+                  ]
+              },
+              options: {
+                  aspectRatio: 3,
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                      }
+                  }
+              }
+          })
       </script>
     </div>
   </div>

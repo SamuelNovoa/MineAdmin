@@ -2,10 +2,12 @@
 {% load bootstrap5 %}
 {% load static %}
 {% load bootstrap_icons %}
+{% load i18n %}
+
 {% block content_admin %}
   <div class="tab_content">
     {% if available %}
-      <h2 class="mods_header">Mods activos</h2>
+      <h2 class="mods_header">{% trans 'Enabled mods' %}</h2>
       <div class="mod-list">
         {% for mod in enabled_mods %}
           <div class="mod-item">
@@ -33,7 +35,7 @@
           </div>
         {% endfor %}
       </div>
-      <h2 class="mods_header">Mods inactivos</h2>
+      <h2 class="mods_header">{% trans 'Disabled mods' %}</h2>
       <div class="mod-list">
         {% for mod in disabled_mods %}
           <div class="mod-item">
@@ -65,22 +67,22 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingOne">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              Agregar mod
+              {% trans 'Add new mod' %}
             </button>
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionNewMod">
             <form method="POST" action="{% url 'new_mod' %}">
               {% csrf_token %}
               {% bootstrap_form mod_form %}
-              <button type="submit" class="btn btn-dark big">Enviar</button>
+              <button type="submit" class="btn btn-dark big">{% trans 'Submit' %}</button>
             </form>
           </div>
         </div>
       </div>
       </ul>
     {% else %}
-      <h2>No hay ningún servidor configurado.</h2>
-      <p>Por favor, establece la ruta del servidor en el archivo de configuración.</p>
+      <h2>{% trans 'There is no server configured.' %}</h2>
+      <p>{% trans 'Please set the server path in the configuration file.' %}</p>
     {% endif %}
   </div>
 {% endblock %}

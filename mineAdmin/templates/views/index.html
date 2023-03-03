@@ -1,16 +1,13 @@
 {% extends 'layout.html' %}
 {% load static %}
+{% load i18n %}
 {% block content %}
   <div id="welcome-jumb" class="p-5 text-center bg-image jumbotron banner">
     <div class="mask">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div>
-          <h1 class="mb-3">Bienvenido al servidor</h1>
-          <p class="mb-3">En nuestro servidor de Minecraft, damos prioridad a la comunidad y la colaboración. Tenemos
-              una comunidad de jugadores acogedora y amistosa que siempre está dispuesta a ayudarse mutuamente,
-              compartir recursos y colaborar en proyectos de construcción. También tenemos un equipo de miembros del
-              personal dedicados y experimentados que siempre están disponibles para ayudar a los jugadores y garantizar
-              que el servidor funcione sin problemas.</p>
+          <h1 class="mb-3">{% trans 'Wellcome to the server' %}</h1>
+          <p class="mb-3">{% trans 'Join the ultimate Minecraft adventure! Explore infinite worlds, build, create and play with your friends play with your friends on our thriving community of Minecraft servers.' %}</p>
         </div>
       </div>
     </div>
@@ -21,9 +18,9 @@
         <div class="mask">
           <div class="d-flex justify-content-center align-items-center h-100">
             <div>
-              <h1 class="mb-3">¡Juega ahora!</h1>
-              <p class="mb-3">Haz click en jugar y accede inmediatamente. ¡No hay tiempo que perder!</p>
-              <a class="btn btn-dark btn-lg" href="{% url 'play' %}" role="button">Jugar</a>
+              <h1 class="mb-3">{% trans '¡Play now!' %}</h1>
+              <p class="mb-3">{% trans "Click on play and log in immediately - there's no time to lose!" %}</p>
+              <a class="btn btn-dark btn-lg" href="{% url 'play' %}" role="button">{% trans 'Play' %}</a>
             </div>
           </div>
         </div>
@@ -32,9 +29,9 @@
         <div class="mask">
           <div class="d-flex justify-content-center align-items-center h-100">
             <div>
-              <h1 class="mb-3">Estadísticas</h1>
-              <p class="mb-3">Aquí puedes consultar las estadísticas de actividad y estabilidad del servidor.</p>
-              <a class="btn btn-dark btn-lg" href="{% url 'stats' %}" role="button">Ver</a>
+              <h1 class="mb-3">{% trans 'Statistics' %}</h1>
+              <p class="mb-3">{% trans 'Here you can check the server activity and stability statistics.' %}</p>
+              <a class="btn btn-dark btn-lg" href="{% url 'stats' %}" role="button">{% trans 'See more' %}</a>
             </div>
           </div>
         </div>
@@ -43,9 +40,9 @@
         <div class="mask">
           <div class="d-flex justify-content-center align-items-center h-100">
             <div>
-              <h1 class="mb-3">¿Tienes problemas?</h1>
-              <p class="mb-3">Puedes usar nuestrar herramientas para tratar de solucionar tu problema.</p>
-              <a class="btn btn-dark btn-lg" href="{% url 'tools' %}" role="button">Explorar</a>
+              <h1 class="mb-3">{% trans 'Having problems?' %}</h1>
+              <p class="mb-3">{% trans 'You can use our tools to try to solve your problem.' %}</p>
+              <a class="btn btn-dark btn-lg" href="{% url 'tools' %}" role="button">{% trans 'Explore' %}</a>
             </div>
           </div>
         </div>

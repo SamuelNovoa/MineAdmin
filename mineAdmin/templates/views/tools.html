@@ -1,16 +1,14 @@
 {% extends 'layout.html' %}
 {% load static %}
+{% load i18n %}
+
 {% block content %}
   <div id="tools-jumb" class="p-5 text-center bg-image jumbotron banner">
     <div class="mask">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div>
-          <h1 class="mb-3">Bienvenido al servidor</h1>
-          <p class="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a type specimen book. It has survived
-            not only five centuries, but also the leap into electronic typesetting, remaining
-            essentially unchanged.</p>
+          <h1 class="mb-3">{% trans 'Do more!' %}</h1>
+          <p class="mb-3">{% trans 'Unlock the full potential of your Minecraft server with our comprehensive tools! Whether whether you are a builder, explorer or adventurer, we have everything you need to maximize your fun and creativity in our creativity in our thriving Minecraft community!' %}</p>
         </div>
       </div>
     </div>
@@ -18,11 +16,11 @@
   <div class="flex-grow-1 view-body">
     <div class="container-fluid content">
       {% if user.is_authenticated %}
-        <h2>Característica no habilitada</h2>
-        <p>El servidor de minecraft no cuenta con el soporte para esta funcionalidad.</p>
+        <h2>{% trans 'Feature not enabled' %}</h2>
+        <p>{% trans 'The minecraft server does not support this functionality.' %}</p>
       {% else %}
-        <h2>¡Debes conectarte antes!</h2>
-        <p>Entra con tu cuenta para poder ver las herramientas.</p>
+        <h2>{% trans 'You must log in first!' %}</h2>
+        <p>{% trans 'Log in with your account to view the tools.' %}</p>
       {% endif %}
       <h2></h2>
     </div>

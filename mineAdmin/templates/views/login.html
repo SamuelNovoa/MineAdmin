@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 {% load bootstrap5 %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
   <div class="flex-grow-1 view-body">
@@ -8,10 +9,10 @@
       <form method="POST" action="{% url 'login' %}">
         {% csrf_token %}
         {% bootstrap_form login_form %}
-        <button type="submit" class="btn btn-dark big">Enviar</button>
+        <button type="submit" class="btn btn-dark big">{% trans 'Submit' %}</button>
       </form>
-      <span class="login-line">¿AÚN NO TIENES CUENTA?</span>
-      <a class="btn btn-dark big" href="{% url 'register' %}">Regístrate</a>
+      <span class="login-line">{% trans "DON'T HAVE AN ACCOUNT YET?" %}</span>
+      <a class="btn btn-dark big" href="{% url 'register' %}">{% trans 'Register' %}</a>
     </div>
   </div>
 {% endblock %}

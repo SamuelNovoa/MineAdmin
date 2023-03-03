@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-pyig^(xcf$r-n94hg%@33udm96qm#6^izhi(owdol()#=sxwgb
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'mineserv.ddns.net'
+    '*'
 ]
 
 
@@ -72,6 +73,10 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.i18n',
+)
+
 WSGI_APPLICATION = 'djangoProject.wsgi.application'
 
 
@@ -110,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -118,6 +123,10 @@ USE_I18N = True
 
 USE_TZ = True
 
+LANGUAGES = (
+  ('es', _('Spanish')),
+  ('en', _('English')),
+)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/

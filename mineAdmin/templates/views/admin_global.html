@@ -1,5 +1,7 @@
 {% extends 'admin.html' %}
 {% load static %}
+{% load i18n %}
+
 {% block content_admin %}
   <div class="tab_content">
     {% if available %}
@@ -8,7 +10,7 @@
         <div class="accordion-item">
           <h2 class="accordion-header" id="flush-headingOne">
             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              Último reporte
+              {% trans 'Last report' %}
             </button>
           </h2>
           <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionLog">
@@ -20,17 +22,17 @@
         <form method="POST" action="{% url 'stop_server' %}">
           {% csrf_token %}
           <input type="hidden" name="next" value="admin">
-          <button class="btn btn-dark" type="submit">Detener servidor</button>
+          <button class="btn btn-dark" type="submit">{% trans 'Stop server' %}</button>
         </form>
       {% else %}
         <form method="POST" action="{% url 'start_server' %}">
           {% csrf_token %}
-          <button class="btn btn-dark" type="submit">Iniciar servidor</button>
+          <button class="btn btn-dark" type="submit">{% trans 'Start server' %}</button>
         </form>
       {% endif %}
     {% else %}
-      <h2>No hay ningún servidor configurado.</h2>
-      <p>Por favor, establece la ruta del servidor en el archivo de configuración.</p>
+      <h2>{% trans 'There is no server configured.' %}</h2>
+      <p>{% trans 'Please set the server path in the configuration file.' %}</p>
     {% endif %}
   </div>
 {% endblock %}

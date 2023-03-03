@@ -1,11 +1,12 @@
 {% load bootstrap5 %}
 {% load login_tags %}
+{% load i18n %}
 
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+        <h5 class="modal-title" id="loginModalLabel">{% trans 'Log in' %}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -13,13 +14,13 @@
           {% csrf_token %}
           {% login_form as login_form %}
           {% bootstrap_form login_form %}
-          <button type="submit" class="btn btn-dark big">Enviar</button>
+          <button type="submit" class="btn btn-dark big">{% trans 'Submit' %}</button>
         </form>
       </div>
       <div class="modal-footer">
-        <label>¿Aún no tienes cuenta?</label>
+        <label>{% trans "Don't have an account yet?" %}</label>
         <button class="btn btn-dark" data-bs-target="#registerModal" data-bs-toggle="modal"
-                data-bs-dismiss="modal">Regístrate
+                data-bs-dismiss="modal">{% trans 'Register' %}
         </button>
       </div>
     </div>
@@ -29,7 +30,7 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="registerModalLabel">Registrar nueva cuenta</h5>
+        <h5 class="modal-title" id="registerModalLabel">{% trans 'Register new account' %}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -37,13 +38,13 @@
           {% csrf_token %}
           {% register_form as register_form %}
           {% bootstrap_form register_form %}
-          <button type="submit" class="btn btn-dark big">Enviar</button>
+          <button type="submit" class="btn btn-dark big">{% trans 'Submit' %}</button>
         </form>
       </div>
       <div class="modal-footer">
-        <label>¿Ya tienes cuenta?</label>
+        <label>{% trans 'Already have an account?' %}</label>
         <button class="btn btn-dark" data-bs-target="#loginModal" data-bs-toggle="modal"
-                data-bs-dismiss="modal">Inicia sesión
+                data-bs-dismiss="modal">{% trans 'Log in' %}
         </button>
       </div>
     </div>
@@ -54,16 +55,20 @@
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link {% if request.path == '/' %} active {% endif %}" href="{% url 'index' %}">Inicio</a>
+          <a class="nav-link {% if request.path == '/' %} active {% endif %}"
+             href="{% url 'index' %}">{% trans 'Index' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {% if request.path == '/play' %} active {% endif %}" href="{% url 'play' %}">Jugar</a>
+          <a class="nav-link {% if request.path == '/play' %} active {% endif %}"
+             href="{% url 'play' %}">{% trans 'Play' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {% if request.path == '/stats' %} active {% endif %}" href="{% url 'stats' %}">Estadísticas</a>
+          <a class="nav-link {% if request.path == '/stats' %} active {% endif %}"
+             href="{% url 'stats' %}">{% trans 'Statistics' %}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {% if request.path == '/tools' %} active {% endif %}" href="{% url 'tools' %}">Herramientas</a>
+          <a class="nav-link {% if request.path == '/tools' %} active {% endif %}"
+             href="{% url 'tools' %}">{% trans 'Tools' %}</a>
         </li>
       </ul>
     </div>
@@ -74,6 +79,31 @@
       </button>
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+{#      {% get_language_info_list for LANGUAGES as languages %}#}
+{#      <ul class="navbar-nav ms-auto">#}
+{#        <li class="nav-item dropdown">#}
+{#          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"#}
+{#             data-bs-toggle="dropdown" aria-expanded="false">#}
+{#            {% trans 'Language' %}#}
+{#          </a>#}
+{#          <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">#}
+{#            <li>#}
+{#              <form action="{% url "set_language" %}" method="post">#}
+{#                {% csrf_token %}#}
+{#                <input type="hidden" name="language" value="es"/>#}
+{#                <button class="dropdown-item" type="submit">{% trans 'Spanish' %}</button>#}
+{#              </form>#}
+{#            </li>#}
+{#            <li>#}
+{#              <form action="{% url "set_language" %}" method="post">#}
+{#                {% csrf_token %}#}
+{#                <input type="hidden" name="language" value="en"/>#}
+{#                <button class="dropdown-item" type="submit">{% trans 'English' %}</button>#}
+{#              </form>#}
+{#            </li>#}
+{#          </ul>#}
+{#        </li>#}
+{#      </ul>#}
       <ul class="navbar-nav ms-auto">
         {% if user.is_authenticated %}
           <li class="nav-item dropdown">
@@ -83,19 +113,19 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               {% if user.is_superuser %}
-                <li><a class="dropdown-item" href="{% url 'admin' %}">Administrar sitio</a></li>
+                <li><a class="dropdown-item" href="{% url 'admin' %}">{% trans 'Admin site' %}</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
               {% endif %}
-              <li><a class="dropdown-item" href="{% url 'logout' %}">Cerrar sesión</a></li>
+              <li><a class="dropdown-item" href="{% url 'logout' %}">{% trans 'Logout' %}</a></li>
             </ul>
           </li>
         {% else %}
           <li class="nav-item">
             <!-- Button trigger modal -->
             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-              Identificarse
+              {% trans 'Access' %}
             </a>
           </li>
         {% endif %}

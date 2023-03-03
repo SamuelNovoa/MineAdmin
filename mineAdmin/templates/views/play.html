@@ -1,17 +1,15 @@
 {% extends 'layout.html' %}
 {% load static %}
 {% load bootstrap_icons %}
+{% load i18n %}
+
 {% block content %}
   <div id="play-jumb" class="p-5 text-center bg-image jumbotron banner">
     <div class="mask">
       <div class="d-flex justify-content-center align-items-center h-100">
         <div>
-          <h1 class="mb-3">¿Quieres conectarte al servidor?</h1>
-          <p class="mb-3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-            printer took a galley of type and scrambled it to make a type specimen book. It has survived
-            not only five centuries, but also the leap into electronic typesetting, remaining
-            essentially unchanged.</p>
+          <h1 class="mb-3">{% trans 'Want to connect?' %}</h1>
+          <p class="mb-3">{% trans 'Join our Minecraft server and explore an endless world of adventure, creativity and community. community. Play with friends, build epic structures and conquer new challenges in our immersive gaming experience. Join now and become part of our growing Minecraft community!' %}</p>
         </div>
       </div>
     </div>
@@ -19,30 +17,33 @@
   <div class="flex-grow-1 view-body">
     {% if available %}
       <div class="container-fluid content">
-        <h2>¡Únete ya!</h2>
-        <p>Usa la siguiente dirección para conectarte. ¡Se te pedirá tu nombre de usuario y contraseña de esta página!</p>
+        <h2>{% trans 'Play now!' %}</h2>
+        <p>{% trans 'Use the following address to log in, you will be prompted for your username and password for this page!' %}</p>
         <div class="input-group mb-2">
           <div class="input-group-prepend">
             <button class="btn btn-outline-secondary" type="button" title="Copiar">
               {% bs_icon 'clipboard' %}
             </button>
           </div>
-          <input type="text" class="form-control" placeholder="mineserv.ddns.net:25565" value="mineserv.ddns.net:25565" readonly />
+          <input type="text" class="form-control" placeholder="mineserv.ddns.net:25565" value="mineserv.ddns.net:25565"
+                 readonly/>
         </div>
       </div>
 
       {% if has_mods %}
         <div class="container-fluid content">
-          <h2>¡Este servidor tiene mods!</h2>
-          <p>Haz click en el siguiente enlace para descargarlos, ¡Te harán falta!</p>
+          <h2>{% trans 'This server has mods!' %}</h2>
+          <p>{% trans 'Click on the following link to download them, you will need them!' %}</p>
           <div class="accordion accordion-flush" id="accordionMods">
             <div class="accordion-item">
               <h2 class="accordion-header" id="flush-headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                  Listado de mods
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  {% trans 'List of mods' %}
                 </button>
               </h2>
-              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionMods">
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                   data-bs-parent="#accordionMods">
                 <ul class="mod-list">
                   {% for mod in mods_list %}
                     <li><a href="{{ mod.url }}">{{ mod.name }}</a></li>
@@ -51,13 +52,13 @@
               </div>
             </div>
           </div>
-          <a class="btn btn-outline-secondary download" href="#">Descargar</a>
+          <a class="btn btn-outline-secondary download" href="#">{% trans 'Download' %}</a>
         </div>
       {% endif %}
     {% else %}
       <div class="container-fluid content">
-        <h2>Todavía no hay ningún servidor configurado</h2>
-        <p>Por favor, contacta con el administrador del sistema.</p>
+        <h2>{% trans 'No server has been configured yet' %}</h2>
+        <p>{% trans 'Please contact the system administrator.' %}</p>
       </div>
     {% endif %}
   </div>

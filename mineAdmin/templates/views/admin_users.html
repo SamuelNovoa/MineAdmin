@@ -2,10 +2,12 @@
 {% load bootstrap5 %}
 {% load static %}
 {% load bootstrap_icons %}
+{% load i18n %}
+
 {% block content_admin %}
   <div class="tab_content">
     {% if available %}
-      <h2 class="mods_header">Superusuarios</h2>
+      <h2 class="mods_header">{% trans 'Superusers' %}</h2>
       <div class="mod-list">
         {% for user in superusers %}
           <div class="mod-item">
@@ -25,7 +27,7 @@
           </div>
         {% endfor %}
       </div>
-      <h2 class="mods_header">Usuarios estándar</h2>
+      <h2 class="mods_header">{% trans 'Standard users' %}</h2>
       <div class="mod-list">
         {% for user in users %}
           <div class="mod-item">
@@ -52,7 +54,7 @@
           </div>
         {% endfor %}
       </div>
-      <h2 class="mods_header">Usuarios bloqueados</h2>
+      <h2 class="mods_header">{% trans 'Banned users' %}</h2>
       <div class="mod-list">
         {% for user in blocked %}
           <div class="mod-item">
@@ -80,8 +82,8 @@
         {% endfor %}
       </div>
     {% else %}
-      <h2>No hay ningún servidor configurado.</h2>
-      <p>Por favor, establece la ruta del servidor en el archivo de configuración.</p>
+      <h2>{% trans 'There is no server configured.' %}</h2>
+      <p>{% trans 'Please set the server path in the configuration file.' %}</p>
     {% endif %}
   </div>
 {% endblock %}

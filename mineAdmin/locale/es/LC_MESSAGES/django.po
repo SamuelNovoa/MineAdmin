@@ -1,0 +1,321 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-03 22:22+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\mineAdmin\templates\admin.html:9
+msgid "General"
+msgstr "General"
+
+#: .\mineAdmin\templates\admin.html:10
+msgid "Users"
+msgstr "Usuarios"
+
+#: .\mineAdmin\templates\admin.html:11
+msgid "Mods"
+msgstr "Mods"
+
+#: .\mineAdmin\templates\footer.html:5
+msgid "Privacy Policy"
+msgstr "Política de privacidad"
+
+#: .\mineAdmin\templates\footer.html:6
+msgid "Legal Notice"
+msgstr "Aviso legal"
+
+#: .\mineAdmin\templates\footer.html:7
+msgid "Cookie Policy"
+msgstr "Política de cookies"
+
+#: .\mineAdmin\templates\footer.html:8
+msgid "Server rules"
+msgstr "Normas del servidor"
+
+#: .\mineAdmin\templates\footer.html:10
+msgid "©2022 Samuel Novoa Comesaña. All rights reserved"
+msgstr "©2022 Samuel Novoa Comesaña. Todos los derechos reservados."
+
+#: .\mineAdmin\templates\navbar.html:9 .\mineAdmin\templates\navbar.html:47
+#: .\mineAdmin\templates\views\register.html:15
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+#: .\mineAdmin\templates\navbar.html:17 .\mineAdmin\templates\navbar.html:41
+#: .\mineAdmin\templates\views\admin_mods.html:77
+#: .\mineAdmin\templates\views\login.html:12
+#: .\mineAdmin\templates\views\register.html:12
+msgid "Submit"
+msgstr "Enviar"
+
+#: .\mineAdmin\templates\navbar.html:21
+msgid "Don't have an account yet?"
+msgstr "¿Aún no tienes cuenta?"
+
+#: .\mineAdmin\templates\navbar.html:23
+#: .\mineAdmin\templates\views\login.html:15
+msgid "Register"
+msgstr "Regístrate"
+
+#: .\mineAdmin\templates\navbar.html:33
+msgid "Register new account"
+msgstr "Registrar nueva cuenta"
+
+#: .\mineAdmin\templates\navbar.html:45
+msgid "Already have an account?"
+msgstr "¿Ya tienes cuenta?"
+
+#: .\mineAdmin\templates\navbar.html:59
+msgid "Index"
+msgstr "Inicio"
+
+#: .\mineAdmin\templates\navbar.html:63
+#: .\mineAdmin\templates\views\index.html:23
+msgid "Play"
+msgstr "Jugar"
+
+#: .\mineAdmin\templates\navbar.html:67
+#: .\mineAdmin\templates\views\index.html:32
+msgid "Statistics"
+msgstr "Estadísticas"
+
+#: .\mineAdmin\templates\navbar.html:71
+msgid "Tools"
+msgstr "Herramientas"
+
+#: .\mineAdmin\templates\navbar.html:83
+msgid "Language"
+msgstr "Idioma"
+
+#: .\mineAdmin\templates\navbar.html:94
+msgid "Admin site"
+msgstr "Administrar sitio"
+
+#: .\mineAdmin\templates\navbar.html:99
+msgid "Logout"
+msgstr "Cerrar sesión"
+
+#: .\mineAdmin\templates\navbar.html:106
+msgid "Access"
+msgstr "Acceder"
+
+#: .\mineAdmin\templates\views\admin_global.html:13
+msgid "Last report"
+msgstr "Último reporte"
+
+#: .\mineAdmin\templates\views\admin_global.html:25
+msgid "Stop server"
+msgstr "Detener servidor"
+
+#: .\mineAdmin\templates\views\admin_global.html:30
+msgid "Start server"
+msgstr "Iniciar servidor"
+
+#: .\mineAdmin\templates\views\admin_global.html:34
+#: .\mineAdmin\templates\views\admin_mods.html:84
+#: .\mineAdmin\templates\views\admin_users.html:85
+msgid "There is no server configured."
+msgstr "No hay ningún servidor configurado."
+
+#: .\mineAdmin\templates\views\admin_global.html:35
+#: .\mineAdmin\templates\views\admin_mods.html:85
+#: .\mineAdmin\templates\views\admin_users.html:86
+msgid "Please set the server path in the configuration file."
+msgstr ""
+"Por favor, establece la ruta del servidor en el archivo de configuración."
+
+#: .\mineAdmin\templates\views\admin_mods.html:10
+msgid "Enabled mods"
+msgstr "Mods activos"
+
+#: .\mineAdmin\templates\views\admin_mods.html:38
+msgid "Disabled mods"
+msgstr "Mods inactivos"
+
+#: .\mineAdmin\templates\views\admin_mods.html:70
+msgid "Add new mod"
+msgstr "Agregar mod"
+
+#: .\mineAdmin\templates\views\admin_users.html:10
+msgid "Superusers"
+msgstr "Superusuarios"
+
+#: .\mineAdmin\templates\views\admin_users.html:30
+msgid "Standard users"
+msgstr "Usuarios estándar"
+
+#: .\mineAdmin\templates\views\admin_users.html:57
+msgid "Banned users"
+msgstr "Usuarios bloqueados"
+
+#: .\mineAdmin\templates\views\index.html:9
+msgid "Wellcome to the server"
+msgstr "Bienvenido al servidor"
+
+#: .\mineAdmin\templates\views\index.html:10
+msgid ""
+"Join the ultimate Minecraft adventure! Explore infinite worlds, build, "
+"create and play with your friends play with your friends on our thriving "
+"community of Minecraft servers."
+msgstr ""
+"¡Únete a la aventura definitiva de Minecraft! Explora mundos infinitos, "
+"construye, crea y juega con tus amigos en nuestra próspera comunidad de "
+"servidores de Minecraft."
+
+#: .\mineAdmin\templates\views\index.html:21
+msgid "¡Play now!"
+msgstr "¡Juega ahora!"
+
+#: .\mineAdmin\templates\views\index.html:22
+msgid "Click on play and log in immediately - there's no time to lose!"
+msgstr "Haz click en jugar y accede inmediatamente. ¡No hay tiempo que perder!"
+
+#: .\mineAdmin\templates\views\index.html:33
+msgid "Here you can check the server activity and stability statistics."
+msgstr ""
+"Aquí puedes consultar las estadísticas de actividad y estabilidad del "
+"servidor."
+
+#: .\mineAdmin\templates\views\index.html:34
+msgid "See more"
+msgstr "Ver más"
+
+#: .\mineAdmin\templates\views\index.html:43
+msgid "Having problems?"
+msgstr "¿Tienes problemas?"
+
+#: .\mineAdmin\templates\views\index.html:44
+msgid "You can use our tools to try to solve your problem."
+msgstr ""
+"Puedes usar nuestrar herramientas para tratar de solucionar tu problema."
+
+#: .\mineAdmin\templates\views\index.html:45
+msgid "Explore"
+msgstr "Explorar"
+
+#: .\mineAdmin\templates\views\login.html:14
+msgid "DON'T HAVE AN ACCOUNT YET?"
+msgstr "¿AÚN NO TIENES CUENTA?"
+
+#: .\mineAdmin\templates\views\play.html:11
+msgid "Want to connect?"
+msgstr "¿Quieres conectarte?"
+
+#: .\mineAdmin\templates\views\play.html:12
+msgid ""
+"Join our Minecraft server and explore an endless world of adventure, "
+"creativity and community. community. Play with friends, build epic "
+"structures and conquer new challenges in our immersive gaming experience. "
+"Join now and become part of our growing Minecraft community!"
+msgstr ""
+"Únete a nuestro servidor de Minecraft y explora un mundo sin fin de "
+"aventuras, creatividad y comunidad. Juega con amigos, construye estructuras "
+"épicas y conquista nuevos retos en nuestra experiencia de juego inmersiva. "
+"¡Únete ahora y forma parte de nuestra creciente comunidad Minecraft!"
+
+#: .\mineAdmin\templates\views\play.html:20
+msgid "Play now!"
+msgstr "¡Únete ya!"
+
+#: .\mineAdmin\templates\views\play.html:21
+msgid ""
+"Use the following address to log in, you will be prompted for your username "
+"and password for this page!"
+msgstr ""
+"Usa la siguiente dirección para conectarte. ¡Se te pedirá tu nombre de "
+"usuario y contraseña de esta página!"
+
+#: .\mineAdmin\templates\views\play.html:35
+msgid "This server has mods!"
+msgstr "¡Este servidor tiene mods!"
+
+#: .\mineAdmin\templates\views\play.html:36
+msgid "Click on the following link to download them, you will need them!"
+msgstr "Haz click en el siguiente enlace para descargarlos, ¡Te harán falta!"
+
+#: .\mineAdmin\templates\views\play.html:42
+msgid "List of mods"
+msgstr "Listado de mods"
+
+#: .\mineAdmin\templates\views\play.html:55
+msgid "Download"
+msgstr "Descargar"
+
+#: .\mineAdmin\templates\views\play.html:60
+msgid "No server has been configured yet"
+msgstr "Todavía no hay ningún servidor configurado"
+
+#: .\mineAdmin\templates\views\play.html:61
+msgid "Please contact the system administrator."
+msgstr "Por favor, contacta con el administrador del sistema."
+
+#: .\mineAdmin\templates\views\register.html:14
+msgid "ALREADY HAVE AN ACCOUNT?"
+msgstr "¿YA TIENES CUENTA?"
+
+#: .\mineAdmin\templates\views\stats.html:10
+msgid "Our statistics"
+msgstr "Nuestras estadísticas"
+
+#: .\mineAdmin\templates\views\stats.html:11
+msgid ""
+"Get to know in depth the statistics and metrics of our Minecraft server. "
+"Discover information about player activity, resource usage and much more to "
+"improve your gaming experience. experience."
+msgstr ""
+"Conoce a fondo las estadísticas y métricas de nuestro servidor Minecraft. "
+"Descubre información sobre la actividad de los jugadores, el uso de recursos "
+"y mucho más para mejorar tu experiencia de juego."
+
+#: .\mineAdmin\templates\views\tools.html:10
+msgid "Do more!"
+msgstr "¡Haz más!"
+
+#: .\mineAdmin\templates\views\tools.html:11
+msgid ""
+"Unlock the full potential of your Minecraft server with our comprehensive "
+"tools! Whether whether you are a builder, explorer or adventurer, we have "
+"everything you need to maximize your fun and creativity in our creativity in "
+"our thriving Minecraft community!"
+msgstr ""
+"¡Desbloquea todo el potencial de tu servidor Minecraft con nuestras "
+"completas herramientas! Ya seas constructor, explorador o aventurero, "
+"¡tenemos todo lo que necesitas para maximizar tu diversión y creatividad en "
+"nuestra próspera comunidad de Minecraft!"
+
+#: .\mineAdmin\templates\views\tools.html:19
+msgid "Feature not enabled"
+msgstr "Característica no habilitada"
+
+#: .\mineAdmin\templates\views\tools.html:20
+msgid "The minecraft server does not support this functionality."
+msgstr ""
+"El servidor de minecraft no cuenta con el soporte para esta funcionalidad."
+
+#: .\mineAdmin\templates\views\tools.html:22
+msgid "You must log in first!"
+msgstr "¡Debes conectarte antes!"
+
+#: .\mineAdmin\templates\views\tools.html:23
+msgid "Log in with your account to view the tools."
+msgstr "Entra con tu cuenta para poder ver las herramientas."
+
+#~ msgid "English"
+#~ msgstr "Inglés"
+
+#~ msgid "Spanish"
+#~ msgstr "Español"

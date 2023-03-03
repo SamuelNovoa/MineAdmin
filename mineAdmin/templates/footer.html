@@ -1,9 +1,11 @@
+{% load i18n %}
+
 <footer>
   <ul>
-    <li><a href="#">Política de privacidad</a></li>
-    <li><a href="#">Aviso legal</a></li>
-    <li><a href="#">Política de cookies</a></li>
-    <li><a href="#">Normas del servidor</a></li>
+    <li><a href="#">{% trans 'Privacy Policy' %}</a></li>
+    <li><a href="#">{% trans 'Legal Notice' %}</a></li>
+    <li><a href="#">{% trans 'Cookie Policy' %}</a></li>
+    <li><a href="#">{% trans 'Server rules' %}</a></li>
   </ul>
-  <p>©2022 Samuel Novoa Comesaña. Todos los derechos reservados.</p>
+  <p>{% trans '©2022 Samuel Novoa Comesaña. All rights reserved' %}</p>
 </footer>

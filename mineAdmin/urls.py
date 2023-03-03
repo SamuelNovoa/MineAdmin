@@ -25,5 +25,8 @@ urlpatterns = [
     path('', static_controllers.index, name='index'),
     path('login', login_controllers.login_user, name='login'),
     path('register', login_controllers.register_user, name='register'),
-    path('logout', login_controllers.logout_user, name='logout')
+    path('logout', login_controllers.logout_user, name='logout'),
+
+    path('lang/en', lang_controllers.set_en, name='set_en'),
+    path('lang/es', lang_controllers.set_es, name='set_es')
 ]
